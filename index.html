@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Intermediate Bounty</title>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <main>
+        <div class="container">
+            <p>Manage your accounts efficiently and easily.</p>
+
+            <div class="accounts">
+                <p>No Account Added Yet!</p>
+            </div>
+
+            <div>
+                <form action="#" onsubmit="addAccount()">
+                    <input id="newAccountName" type="text" placeholder="Account Name" autofocus>
+                    <button type="submit">Add</button>
+                </form>
+            </div>
+            
+        </div>
+
+        <div class="container">
+            <h2>Operation</h2>
+
+            <form action="#" onsubmit="processTransaction()" class="process-form">
+                <div class="form-group">
+                    <label for="transactionType">Transaction Type: </label>
+                    <select id="transactionType">
+                        <option value="deposit">Deposit</option>
+                        <option value="withdraw">Withdraw</option>
+                        <option value="transfer">Transfer</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="accountName">Select Account: </label>
+                    <input id="accountName" type="text" placeholder="Account Name" required>
+                </div>
+
+                <div class="form-group transfer-to">
+                    <label for="transferTo">Select Account To Transfer: </label>
+                    <input id="transferTo" type="text" placeholder="Transfer To (only for transfer)" >
+                </div>
+
+                <div class="form-group">
+                    <label for="amount">Enter Amount: </label>
+                    <input id="amount" type="number" placeholder="Amount" required>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+
+        </div>
+    </main>
+
+    <footer>
+        <strong>Made with 💖 by val</strong>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
