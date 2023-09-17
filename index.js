@@ -183,9 +183,9 @@ const transferBalance = (fromAccountName, toAccountName, amount) => {
 // Process Transaction
 const processTransaction = () => {
   try {
-    const accountName = document.querySelector('#accountName').value
+    const accountName = document.querySelector('#accountName')
     const transactionType = document.querySelector('#transactionType').value
-    const amount = document.querySelector('#amount').value
+    const amount = document.querySelector('#amount')
 
     if (! confirm("Are your Sure?")) {
       return false
@@ -193,18 +193,22 @@ const processTransaction = () => {
 
     switch(transactionType) {
       case 'deposit':
-        addBalance(accountName, amount)
+        addBalance(accountName.value, amount.value)
         break
       case 'withdraw':
-        withdrawBalance(accountName, amount)
+        withdrawBalance(accountName.value, amount.value)
         break
       case 'transfer':
-        const transferTo = document.querySelector('#transferTo').value
-        transferBalance(accountName, transferTo, amount)
+        const transferTo = document.querySelector('#transferTo')
+        transferBalance(accountName.value, transferTo.value, amount.value)
         break
       default:
         throw new Error('Transaction Not Supported')
     }
+
+    accountName.value = ''
+    amount.value = ''
+    if(transferTo) transferTo.value = ''
   } catch(e) {
     console.log(e)
     alert('Error: ' + e.message)
